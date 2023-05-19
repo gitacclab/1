@@ -1,0 +1,24 @@
+tcpdump -nn -tt -r second-0-0.pcap
+tcpdump -nn -tt -r second-1-0.pcap
+tcpdump -nn -tt -r second-2-0.pcap
+
+Expected:
+
+reading from file second-0-0.pcap, link-type PPP (PPP), snapshot length 65535
+2.000000 IP 10.1.1.1.49153 > 10.1.2.4.9: UDP, length 1024
+2.021607 IP 10.1.2.4.9 > 10.1.1.1.49153: UDP, length 1024
+
+
+reading from file second-0-0.pcap, link-type PPP (PPP), snapshot length 65535
+2.000000 IP 10.1.1.1.49153 > 10.1.2.4.9: UDP, length 1024
+2.021607 IP 10.1.2.4.9 > 10.1.1.1.49153: UDP, length 1024
+
+reading from file second-2-0.pcap, link-type EN10MB (Ethernet), snapshot length 65535
+2.011698 ARP, Request who-has 10.1.2.4 (ff:ff:ff:ff:ff:ff) tell 10.1.2.1, length 50
+2.011710 ARP, Reply 10.1.2.4 is-at 00:00:00:00:00:06, length 50
+2.011803 IP 10.1.1.1.49153 > 10.1.2.4.9: UDP, length 1024
+2.017815 ARP, Request who-has 10.1.2.1 (ff:ff:ff:ff:ff:ff) tell 10.1.2.4, length 50
+2.017828 ARP, Reply 10.1.2.1 is-at 00:00:00:00:00:03, length 50
+2.017921 IP 10.1.2.4.9 > 10.1.1.1.49153: UDP, length 1024
+
+
